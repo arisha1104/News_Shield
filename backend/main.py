@@ -24,7 +24,7 @@ load_dotenv(dotenv_path=dotenv_path)
 
 app = Flask(__name__, template_folder=template_dir)
 CORS(app)  # Enable CORS for all routes
-app.secret_key = 'your_secret_key'  # Used for sessions
+app.secret_key = os.getenv("SERPAPI_KEY")  # Used for sessions
 
 # Hardcoded user credentials (you can modify these)
 USER_CREDENTIALS = {
